@@ -1,0 +1,31 @@
+server:
+  port: 3378
+
+spring:
+  application:
+    name: nacos-config-client3378
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.181.186:8848 #注册中心
+      config:
+        server-addr: 192.168.181.186:8848 # 配置中心
+        file-extension: yaml # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
+        group: DEV_GROUP   #分组
+        #group: TEST_GROUP
+        namespace: dev  # 20240620 添加
+        shared-configs[0]:
+          data-id: shared-dev.yaml
+          group: DEV_GROUP   #分组
+          refresh: true
+        shared-configs[1]:
+          data-id: mysql-dev.yaml
+          group: DEV_GROUP   #分组
+          refresh: true
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    org.springframework.web: info
+    org.springframework.boot.web.servlet.ServletWebServerFactory: info
