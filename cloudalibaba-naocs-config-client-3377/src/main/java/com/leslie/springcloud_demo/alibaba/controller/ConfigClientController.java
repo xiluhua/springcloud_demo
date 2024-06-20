@@ -14,8 +14,14 @@ public class ConfigClientController {
     @Value("${config.info}")
     private String info;
 
+    @Value("${shared.game}")
+    private String game;
+
+    @Value("${mysql.address}")
+    private String mysqlMddress;
+
     @GetMapping("/config/info")
     public String getInfo() {
-        return info;
+        return info+", game: "+game+", mysqlMddress: "+mysqlMddress;
     }
 }
