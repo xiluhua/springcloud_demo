@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 public class NacosConfigClientMain3378 {
     public static void main(String[] args) {
         SpringApplication.run(NacosConfigClientMain3378.class,args);
-        System.out.println();
-        System.out.println("http://localhost:3378/swagger-ui.htm");
+        System.out.println("http://localhost:3378/swagger-ui.html");
     }
 }
